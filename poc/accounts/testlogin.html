@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>test login</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+    </div>
+
+    <!-- Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <!-- Firebase-->
+    <script src="https://www.gstatic.com/firebasejs/5.5.0/firebase.js"></script>
+    <!-- Moment.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+    <script>
+        // Configuration Firebase
+        var config = {
+            apiKey: "AIzaSyBdpZcMPZIDwRNM5RcekAkrwuzxa74FgzM",
+            authDomain: "cryptocurrecny-f7eb7.firebaseapp.com",
+            databaseURL: "https://cryptocurrecny-f7eb7.firebaseio.com",
+            projectId: "cryptocurrecny-f7eb7",
+            storageBucket: "cryptocurrecny-f7eb7.appspot.com",
+            messagingSenderId: "917854135892"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(config);
+
+
+        //check if logged in
+        function userCheck() {
+            if (localStorage.getItem('cw-username-test')) {
+                document.querySelector('.container').innerHTML = `
+                <h4>${localStorage.getItem('cw-username-test')} is logged in</h1>
+                    <button class="btn btn-danger" onclick="logout()">Logout</button>
+                    <h2>Total: $123</h2
+                        <h3>Portfolio:</h3>
+                        <table class='table'>
+                            <tr>
+                                <th>coin</th> <th>holdings</th> <th>USD</th> <th>Change</th>
+                                </tr>
+                                <tr>
+                                    <td>Example</td> <td>123456</td> <td>$123</td> <td>1.5%</td>
+                                    </tr>
+                                    </table>
+                                    `
+                //call function to display portfolio etc
+                //
+            }
+            else {
+                loginForm()
+            }
+        }
+
+        //Display login form
+        function loginForm() {
+            //create div with login form
+            var loginContainer = document.createElement('div')
+            loginContainer.className = 'row'
+            loginContainer.innerHTML = `
+                    <div class="col-12">
+                        <h2>Login</h2>
+                        <form>
+                            <div class="form-group">
+                                <label for="uId">Username<span id="userIdErr" class="text-danger"></span></label>
+                                <input class="form-control" id="uId" placeholder="User ID..." type="text">
+                            </div>
+                            <button class="btn btn-primary" onclick="loginAccount()">Submit</button>
+                            <button class="btn btn-primary" onclick="createAccountForm()">Create Account</button>
+                        </form>
+                    </div>
+            `
+            //clear page
+            document.querySelector('.container').innerHTML = ''
+            //append login form
+            document.querySelector('.container').appendChild(loginContainer)
+        }
+
+        //Display Create-Account Form
+        function createAccountForm() {
+            //create div with create account form
+            var createContainer = document.createElement('div')
+            createContainer.className = 'row'
+            createContainer.innerHTML = `
+                    <div class="col-12">
+                        <h2>Create New Account</h2>
+                        <form>
+                            <div class="form-group">
+                                <label for="uName">Name <span id="userNameErr" class="text-danger"></span></label>
+                                <input class="form-control" id="uName" placeholder="User name..." type="text">
+                            </div>
+                            <div class="form-group">
+                                <label for="uId">Username <span id="userIdErr" class="text-danger"></span></label>
+                                <input class="form-control" id="uId" placeholder="User ID..." type="text">
+                            </div>
+                            <button class="btn btn-primary" onclick="createAccount()">Submit</button>
+                        </form>
+                    </div>
+            `
+            //clear page
+            document.querySelector('.container').innerHTML = ''
+            //append create account form
+            document.querySelector('.container').appendChild(createContainer)
+        }
+
+        //Button Submit Login
+        function loginAccount() {
+            event.preventDefault()
+            //if account exists 
+            //display porfolio etc
+            localStorage.setItem('cw-username-test', document.getElementById('uId').value)
+            //else error (please create account)
+            userCheck()
+        }
+
+        //Button Submit new account
+        function createAccount() {
+            event.preventDefault()
+            //push user account to firebase
+            //
+            //set username on local storage
+            localStorage.setItem('cw-username-test', document.getElementById('uId').value)
+            userCheck()
+        }
+
+        //Button Logout
+        function logout() {
+            localStorage.removeItem('cw-username-test')
+            userCheck()
+        }
+
+        //run initial check on page load
+        userCheck()
+
+        function displayAccountInfo {
+            document.getElementById('js-user-page').innerHTML = `
+                <div class="userHeader">
+                <h6 class="topText">Your Portfolio Balance:</h6>
+                <h1>$7,459.23</h1>
+                <h6>test ^</h6>
+            </div>
+
+                <!-- < div class="searchPage" >
+                    <button type="button" class="btn btn-default btn-circle btn-lg"><i class="fa fa-plus"></i></button>
+            </div > -->
+
+                <div class="footer">
+                    <div class="background">
+                        <!-- <p>Bitcoin Watch Item</p>
+                        <p>Ethereum Watch Item</p>
+                        <p>Litecoin Watch Item</p>
+                        <p>Ripple Watch Item</p> -->
+        
+                <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Coin</th>
+                                    <th scope="col">Holding</th>
+                                    <th scope="col">BTC Price</th>
+                                    <th scope="col">Dollar Price</th>
+                                    <th scope="col">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody class="marketTable2">
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            `
+        }
+    </script>
+</body>
+
+</html>

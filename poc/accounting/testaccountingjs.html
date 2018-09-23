@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    Enter a number:
+    <input type="number" name="number" id="number" onchange="myFunction()">
+    <H4>USD Formatted: <span id='js-USD-format'></span></H4>
+    <H4>Bitcoin Formatted: <span id='js-bit-format'></span></H4>
+    <script src="../assets/js/accounting.js"></script>
+    <script>
+        function myFunction() {
+            document.getElementById('js-USD-format').innerText = accounting.formatMoney(document.getElementById('number').value)
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Scope+One" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Quintessential" rel="stylesheet">
+  <link rel="stylesheet" href="../..//CarouselFramework/style.css">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="false">
+    <ol class="carousel-indicators">
+      <li class="indicator" data-target="#carouselExampleIndicators" data-slide-to="0"></li>
+      <li class="indicator" data-target="#carouselExampleIndicators" data-slide-to="1" class="active"></li>
+      <li class="indicator" data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+
+      <!-------------------------------------------------- NEWS PAGE --------------------------------------------------->
+      <div class="carousel-item">
+        <div class="container">
+          <div class="col-md-12">
+            <div class="newsHeader">
+              <h1 class="text-center"><strong>CNN NEWS</strong></h1>
+            </div>
+            <div class="card">
+
+
+                <div class="card-header"> 
+                    <h4>Search CNN</h4>
+                </div>
+              
+                <div class="card-body">
+                  <form role="form">
+                    <div class="form-group">
+                      <label for="search">Search Term:</label>
+                      <input type="text" class="form-control" id="search-news">
+                    </div>
+                    <button type="submit" class="btn btn-default" id="news-search">
+                      <i class="fa fa-search"></i> Search</button>
+                    <button class="btn btn-default" id="clear-all">
+                      <i class="fa fa-trash"></i> Clear Results</button>
+                  </form>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Top Articles:</h4>
+                    </div>
+                    <div class="card-body" id="js-news-page">
+                    </div>
+                  </div>
+
+              </div>
+          </div>
+        </div>
+      </div>
+
+      <!-------------------------------------------------- USER PAGE --------------------------------------------------->
+      <div class="carousel-item active">
+
+        <div class="container" >
+          <div class="col-md-12" id="js-user-page">
+      
+          </div>
+        </div>
+
+      </div>
+
+      <!-------------------------------------------------- SEARCH PAGE --------------------------------------------------->
+      <div class="carousel-item">
+          <div class="container">
+            <div class="col-md-12">
+              <div class="newsHeader">
+                <h1 class="text-center"><strong>Crypto Watcher</strong></h1>
+              </div>
+              <div class="card">
+  
+  
+                  <div class="card-header"> 
+                      <h4>Search Cryptocurrencies</h4>
+                  </div>
+                
+                  <div class="card-body">
+                    <form role="form">
+                      <div class="form-group">
+                        <input type="text" class="form-control" id="search-crypto">
+                      </div>
+                      <button type="submit" class="btn btn-default" id="crypto-search">
+                        <i class="fa fa-search"></i> Search</button>
+                    </form>
+                  </div>
+                  
+                  <div class="card">
+                      <div class="card-header">
+                          <h4>Search Results:</h4>
+                      </div>
+                      <div class="card-body" id="js-search-page">
+                      </div>
+                    </div>
+  
+                </div>
+            </div>
+          </div>
+        </div>
+
+    </div>
+    <a class="carousel-control-prev carousel-control" href="#carouselExampleIndicators" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next carousel-control" href="#carouselExampleIndicators" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+    <!-- Firebase-->
+    <script src="https://www.gstatic.com/firebasejs/5.5.0/firebase.js"></script>
+    <!-- Moment.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+    <script src="../../assets/js/user.js"></script>
+    <script src="../../assets/js/login.js"></script>
+    <script>/*
+        
+        //check if logged in
+        function userCheck() {
+            if (localStorage.getItem('cw-username-test')) {
+                document.querySelector('#js-user-page').innerHTML = `
+                    <h4>${localStorage.getItem('cw-username-test')} is logged in</h1>
+                        <button class="btn btn-danger" onclick="logout()">Logout</button>
+                        <h2>Total: $123</h2
+                            <h3>Portfolio:</h3>
+                            <table class='table'>
+                                <tr>
+                                    <th>coin</th> <th>holdings</th> <th>USD</th> <th>Change</th>
+                                    </tr>
+                                    <tr>
+                                        <td>Example</td> <td>123456</td> <td>$123</td> <td>1.5%</td>
+                                        </tr>
+                                        </table>
+                                        `
+                //call function to display portfolio etc
+                //
+            }
+            else {
+                loginForm()
+            }
+        }
+
+        //Display login form
+        function loginForm() {
+            //create div with login form
+            var loginContainer = document.createElement('div')
+            loginContainer.className = 'row'
+            loginContainer.innerHTML = `
+                        <div class="col-12">
+                            <h2>Login</h2>
+                            <form>
+                                <div class="form-group">
+                                    <label for="uId">Username<span id="userIdErr" class="text-danger"></span></label>
+                                    <input class="form-control" id="uId" placeholder="User ID..." type="text">
+                                </div>
+                                <button class="btn btn-primary" onclick="loginAccount()">Submit</button>
+                                <button class="btn btn-primary" onclick="createAccountForm()">Create Account</button>
+                            </form>
+                        </div>
+                `
+            //clear page
+            document.querySelector('#js-user-page').innerHTML = ''
+            //append login form
+            document.querySelector('#js-user-page').appendChild(loginContainer)
+        }
+
+        //Display Create-Account Form
+        function createAccountForm() {
+            //create div with create account form
+            var createContainer = document.createElement('div')
+            createContainer.className = 'row'
+            createContainer.innerHTML = `
+                        <div class="col-12">
+                            <h2>Create New Account</h2>
+                            <form>
+                                <div class="form-group">
+                                    <label for="uName">Name <span id="userNameErr" class="text-danger"></span></label>
+                                    <input class="form-control" id="uName" placeholder="User name..." type="text">
+                                </div>
+                                <div class="form-group">
+                                    <label for="uId">Username <span id="userIdErr" class="text-danger"></span></label>
+                                    <input class="form-control" id="uId" placeholder="User ID..." type="text">
+                                </div>
+                                <button class="btn btn-primary" onclick="createAccount()">Submit</button>
+                            </form>
+                        </div>
+                `
+            //clear page
+            document.querySelector('#js-user-page').innerHTML = ''
+            //append create account form
+            document.querySelector('#js-user-page').appendChild(createContainer)
+        }
+
+        //Button Submit Login
+        function loginAccount() {
+            event.preventDefault()
+            //if account exists 
+            //display porfolio etc
+            localStorage.setItem('cw-username-test', document.getElementById('uId').value)
+            //else error (please create account)
+            userCheck()
+        }
+
+        //Button Submit new account
+        function createAccount() {
+            console.log('made it into creataccount function')
+            event.preventDefault()
+            userNameInput = document.getElementById('uName').value.trim()
+            userIdInput = document.getElementById('uId').value.trim()
+            //push user account to firebase
+            if (!AccountInputError(userNameInput, userIdInput)){
+                addUserAccount(userIdInput, userNameInput)
+                //set username on local storage
+                localStorage.setItem('cw-username-test', userIdInput)
+                userCheck()
+            }
+        }
+
+        function AccountInputError(userNameInput, userIdInput) {
+            let isErrorFound = false;
+            if (userNameInput === ''){
+                isErrorFound = true
+                document.getElementById('userNameErr').innerHTML = "User Name cannot be blank"
+            }
+            if (userIdInput === ''){
+                isErrorFound = true
+                document.getElementById('userIdErr').innerHTML = "User ID cannot be blank"
+            }
+            if (doesAccountExist(userIdInput)){
+                console.log('user account must have existed')
+                isErrorFound = true
+                document.getElementById('userIdErr').innerHTML = 'User ID already in use.'
+            }
+            return isErrorFound
+        }
+
+
+        //Button Logout
+        function logout() {
+            localStorage.removeItem('cw-username-test')
+            userCheck()
+        }
+
+        //run initial check on page load
+        userCheck()
+
+        function displayAccountInfo () {
+            document.getElementById('js-user-page').innerHTML = `
+                    <div class="userHeader">
+                    <h6 class="topText">Your Portfolio Balance:</h6>
+                    <h1>$7,459.23</h1>
+                    <h6>test ^</h6>
+                </div>
+    
+                    <!-- < div class="searchPage" >
+                        <button type="button" class="btn btn-default btn-circle btn-lg"><i class="fa fa-plus"></i></button>
+                </div > -->
+    
+                    <div class="footer">
+                        <div class="background">
+                            <!-- <p>Bitcoin Watch Item</p>
+                            <p>Ethereum Watch Item</p>
+                            <p>Litecoin Watch Item</p>
+                            <p>Ripple Watch Item</p> -->
+            
+                    <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Coin</th>
+                                        <th scope="col">Holding</th>
+                                        <th scope="col">BTC Price</th>
+                                        <th scope="col">Dollar Price</th>
+                                        <th scope="col">Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="marketTable2">
+                                </tbody>
+                            </table>
+    
+                        </div>
+                    </div>
+                `
+        }*/
+    </script>
+</body>
+
+</html>

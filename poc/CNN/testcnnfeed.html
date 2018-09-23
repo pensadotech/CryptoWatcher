@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>CNN news</title>
+
+  <!-- Awsome fonts and icons -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+    crossorigin="anonymous">
+  <!-- Bootstrap  -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous">
+
+  <!-- Personal Style -->
+  <link rel="stylesheet" href="./cnnfeed.css">
+
+</head>
+
+<body>
+
+
+  <div class="container">
+
+    <!-- row 1 -->
+    <div class="row">
+      <h4 id="newsSource"><i class="fas fa-newspaper"></i> CNN New Feed</h4>
+    </div>
+
+    <!-- row 2 -->
+    <div class="row searchContainer">
+
+      <form class="newsFeedSelector">
+        <div class="p-2">
+          <div class="form-group">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <button type="submit" class="btn btn-primary d-inline-block" onclick="getNewsOnClick()">
+                  <i class="fas fa-sync-alt"></i>
+                </button>
+              </div>
+              <select name="news" class="form-control" id="newsTopic" onchange="getNewsOnClick()">
+                <option selected>Crypto Coin news</option>
+                <option>CNN</option>
+                <option>Bloomberg</option>
+                <option>BBC News</option>
+                <option>Google News</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </form>
+
+    </div>
+
+    <!-- row 3 -->
+    <div class="row resultsContainer">
+      <div class="resultHeader">
+        <h4 id="articleSource" class="text-primary">articles</h4>
+      </div>
+      <div id="articlesSection" class="container artcileSection">
+
+        <!-- Article goes here -->
+
+      </div>
+    </div>
+
+  </div>
+  <!-- container end -->
+
+  <!-- Bootstrap JavaScripts -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+
+  <script src="./cnnfeed.js"></script>
+
+</body>
+
+</html>
