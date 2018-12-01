@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Firebase portfolio POC</title>
+    <!-- Awsome fonts and icons -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+        crossorigin="anonymous">
+    <!-- Bootstarap CSS -->
+    <link href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB'
+        crossorigin='anonymous'>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <form class="newTrainForm">
+            <div class="form-group">
+                <label for="uId">UserID <span id="userIdErr" class="text-danger"></span></label>
+                <input class="form-control" id="uId" placeholder="User ID..." type="text">
+            </div>
+            <div class="form-group">
+                <label for="cName">Coin symbol <span id="coinNameErr" class="text-danger"></span></label>
+                <input class="form-control" id="cName" placeholder="Coin name..." type="text">
+            </div>
+            <div class="form-group">
+                <label for="cSymbol">Coin symbol <span id="coinSymbolErr" class="text-danger"></span></label>
+                <input class="form-control" id="cSymbol" placeholder="Coin symbol..." type="text">
+            </div>
+
+            <div class="form-group">
+                <label for="cHold">Holding <span id="HodlingErr" class="text-danger"></span></label>
+                <input class="form-control" id="cHold" placeholder="holding ..." type="text">
+            </div>
+            <div class="form-group">
+                <div class="checkbox">
+                    <label><input type="checkbox" value="" id="cFav"> Add to watch list</label>
+                </div>
+            </div>
+            <button class="btn btn-primary" onclick="SubmitCoin()">Submit</button>
+            <button class="btn btn-primary" onclick="SubmitDeleteCoin()">Remove</button>
+        </form>
+
+        <p>User messages </p>
+        <p id="userIdErr"></p>
+        <p id="userNameErr"></p>
+        <p id="userPwdErr"></p>
+        <p id="accountErr"></p>
+
+        <h1>Coins</h1>
+        <div id="usrPprotfolio">
+
+        </div>
+
+    </div>
+
+    <!-- java scripts -->
+    <!-- Bootstarp javascripts -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <!-- Firebase Reference -->
+    <script src="https://www.gstatic.com/firebasejs/5.4.2/firebase.js"></script>
+    <!-- <script src="https://www.gstatic.com/firebasejs/5.5.0/firebase.js"></script> -->
+    <!-- moment -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+    <!-- Applicaiton javascripts -->
+    <script src="./userPortfolio.js"></script>
+</body>
+
+</html>

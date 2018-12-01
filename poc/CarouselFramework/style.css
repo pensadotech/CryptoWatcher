@@ -1,0 +1,96 @@
+html {
+    min-height: 100%;
+}
+
+body {
+  height: 100%;
+  width: 100%;  
+  background: #363636;
+  background: -webkit-linear-gradient(-200deg, #2a2a2a, #000000);
+  background: linear-gradient(-200deg, #2a2a2a, #000000);
+  margin: 0;
+  padding: 0;
+}
+
+.carousel-indicators,
+.carousel-control {
+    position: fixed;
+}
+
+.container {
+    position: relative;
+    height: 670px;
+}
+
+.userHeader {
+    background: -webkit-linear-gradient(-10deg, #44A08D,#093637);
+    background: linear-gradient(-10deg, #44A08D,#093637);
+    padding-top: 70px;
+    padding-bottom: 20px;
+}
+
+.userHeader h1, h4, label {
+    font-family: 'Scope One', serif;
+}
+
+.label2 {
+    margin-top: 15px;
+}
+
+.userHeader h1, h6, h5 {
+    text-align: center;
+}
+
+i {
+    font-size:24px;
+  }
+
+.background {
+    background-color: white;
+    border: 2px solid white;
+    margin-top: 20px;
+    padding: 15px 15px 15px 15px;
+}
+
+.background p {
+    background-color: #374454;
+    border: 1px solid #374454;
+}
+
+.newsHeader h1, .searchHeader h1 {
+    background: -webkit-linear-gradient(-120deg, #3a6186, #89253e);
+    background: linear-gradient(-120deg, #3a6186, #89253e);
+    padding-top: 70px;
+    padding-bottom: 45px;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+
+.card {
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+}
+
+.card, div.background {
+    background-color: #2c3e50;
+}
+
+.background p, .userHeader h1, .newsHeader h1, 
+.searchHeader h1, .card, div.background,
+h4, h5, h6, label {
+    color: white;
+}
+
+.background p, .newsHeader h1,
+.searchHeader h1, {
+    text-align: center;
+}
+
+.newsHeader h1, .searchHeader h1,
+.background p, h6, .topText, th, form i {
+    font-family: 'Raleway', sans-serif;
+}
+
+a.carousel-control-next, a.carousel-control-prev {
+    width: 50px;
+}

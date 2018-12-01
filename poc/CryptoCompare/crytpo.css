@@ -1,0 +1,56 @@
+body {
+    /* Remove margins and padding around content */
+    margin: 0;
+    padding: 0;
+}
+
+.searchContainer {
+    border: 2px solid lightgray;
+    padding: 5px 10px 5px 10px;
+    margin-bottom: 20px;
+}
+
+.actionSelector {
+    width: 250px;
+}
+
+.coinResultContainer {
+    border: 2px solid lightgray;
+    padding: 5px 10px 5px 10px;
+    margin-bottom: 20px;
+}
+
+.upperCaseInput {
+    text-transform:uppercase;
+}
+.coinsSection {
+    border: 2px solid lightgray;
+}
+
+.coinName {
+    color: black;
+}
+
+.coinSymbol {
+    color: orange;
+}
+
+.coinPrice {
+    color: black;
+    background-color: lightgray;
+}
+
+.coinChange {
+    color: black;
+    background-color: lightgray;
+}
+
+/*  Media Queries ...................... */
+
+/* @media screen and (max-width: 767px) {
+    h4.scrollForSmall:after {
+        content: "  ( scroll right -> )";
+        font-size: .6em;
+    }
+
+} */

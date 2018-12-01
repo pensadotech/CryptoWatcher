@@ -1,0 +1,30 @@
+body {
+  /* Remove margins and padding around content */
+  margin: 0;
+  padding: 0;
+}
+
+
+.searchContainer { 
+  border: 2px solid lightgray;
+  padding: 5px 10px 5px 10px;
+  margin-bottom: 20px;
+}
+
+.resultsContainer {
+  border: 2px solid lightgray;
+  padding: 5px 10px 5px 10px;
+  margin-bottom: 20px;
+}
+
+.newsFeedSelector {
+  width: 400px;
+}
+
+.artcileSection {
+  border: 2px solid lightgray;
+}
+
+.artcileImg {
+  width: 100px;
+}

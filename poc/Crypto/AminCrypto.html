@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
+</head>
+<p id="Market"></p>
+
+<body>
+    <div class="container">
+        <h2>Binance Market Table</h2>
+        <p>Market Summary</p>
+        <br>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Market Name</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Volume</th>
+                    <th scope="col">Change</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody class="marketTable">
+                <!-- Insert movie rows here -->
+
+            </tbody>
+        </table>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous"></script>
+    <script>
+        $.get('https://api.binance.com/api/v1/ticker/24hr')
+            .then(function (response) {
+                console.log(response);
+
+                response.forEach(Mname => {
+                    if (Mname.quoteVolume > 400 && Mname.symbol.endsWith("BTC")) {
+
+                        $('.marketTable').append(
+                            `
+            <tr>
+              <td>${Mname.symbol}</td>
+              <td>${Mname.lastPrice}</td>
+              <td>${Mname.quoteVolume}</td>
+              <td>${Mname.priceChangePercent}</td>
+              
+            </tr>
+        `
+                        )
+                    }
+                });
+
+            }).catch(function (e) {
+                console.error(e)
+            })
+    </script>
+</body>
+
+</html>

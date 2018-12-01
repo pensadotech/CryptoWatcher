@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Crypto search</title>
+
+  <!-- Awsome fonts and icons -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+    crossorigin="anonymous">
+  <!-- Bootstrap  -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous">
+
+  <!-- Applciaiton style -->
+  <link rel="stylesheet" href="./crytpo.css">
+
+</head>
+
+<body>
+
+  <div class="container">
+    <!-- row 2 -->
+    <div class="row">
+      <h4 id="newsSource"><i class="fab fa-bitcoin"></i> Crypto search</h4>
+    </div>
+
+    <!-- row 2 -->
+    <div class="row searchContainer">
+
+      <div class="p-2">
+        <form>
+          <div class="form-group">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <button type="submit" class="btn btn-primary d-inline-block" 
+                     onclick="refreshCoins()">
+                  <i class="fas fa-sync-alt"></i>
+                </button>
+              </div>
+              <select name="news" class="form-control actionSelector" id="actionSelection" onchange="actionSelectionOnClick()">
+                <option selected>Top currencies</option>
+                <option>Search</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <button id="btnSearch" type="submit" class="btn btn-primary d-inline-block" disabled onclick="searchOnClick()">
+                  <i class="fas fa-search"></i>
+                </button>
+              </div>
+              <input id="searchText" type="text" disabled class="form-control upperCaseInput" placeholder="Coin symbol...">
+            </div>
+          </div>
+        </form>
+      </div>
+
+    </div>
+
+    <!-- row 3 -->
+    <div class="row coinResultContainer">
+      <div class="resultHeader">
+        <h4 class="text-primary scrollForSmall">Coin List</h4>
+      </div>
+
+      <div id="coinsSection" class="container coinSection">
+        <div class="table-responsive">
+          <table class="table table-striped table-hover table-sm">
+            <thead>
+              <tr>
+                <th scope="col"></th>
+                <th scope="col">Coin</th>
+                <th scope="col">Price</th>
+                <th scope="col">Chg.24h</th>
+              </tr>
+            </thead>
+            <tbody id="coin-data">
+              <!-- Coin data goes here -->
+
+              <!-- <tr>
+                <td>
+                  <button class="btn btn-primary rowBtn" data-toggle="tooltip" title="Add" onclick="">
+                    <i class="fas fa-plus-circle"></i>
+                  </button>
+                </td>
+                <td>
+                  <h5 class="coinName">Bitcoin</h5>
+                  <h6 class="coinSymbol">BTC</h6>
+                </td>
+                <td><span class="coinPrice">$1,200</span></td>
+                <td><span class="coinChange"> -4.11%</span></td>
+              </tr> -->
+
+
+            </tbody>
+          </table>
+        </div>
+
+
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Bootstrap JavaScripts -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+
+  <script src="./crypto.js"></script>
+
+</body>
+
+</html>
