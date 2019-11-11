@@ -1,12 +1,12 @@
 // Firebase POC for adding user accounts
 // Configuration Firebase
 var config = {
-    apiKey: "AIzaSyBdpZcMPZIDwRNM5RcekAkrwuzxa74FgzM",
-    authDomain: "cryptocurrecny-f7eb7.firebaseapp.com",
-    databaseURL: "https://cryptocurrecny-f7eb7.firebaseio.com",
-    projectId: "cryptocurrecny-f7eb7",
-    storageBucket: "cryptocurrecny-f7eb7.appspot.com",
-    messagingSenderId: "917854135892"
+    apiKey: "<Yuor credentials goes here",
+    authDomain: "<Your domain>",
+    databaseURL: "<Your datase URL goes here",
+    projectId: "<Yuor project ID goes here>",
+    storageBucket: "<Storage BUcket goes here",
+    messagingSenderId: "<Your message sender>"
 };
 // Initialize Firebase
 firebase.initializeApp(config);
